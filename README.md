@@ -8,7 +8,7 @@ Well, this LoL Acc Checker is based of the original account checker (https://git
 
 This program is Made by a person who has bad internet, and is made for people who have bad internet aswell. This account checker is very network and pc conserving; **However, it is ultra-fast aswell.**
 
-[DOWNLOAD](https://github.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/blob/master/LoLAccountChecker.zip)
+[DOWNLOAD](https://github.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/blob/master/LoLAccChecker-PuppyLover101.rar)
 
 ![alt tag](https://raw.githubusercontent.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/master/Sample%20Image-Dashboard.png)
 <br>
