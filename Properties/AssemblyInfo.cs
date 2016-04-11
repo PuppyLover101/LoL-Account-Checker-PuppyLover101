@@ -36,7 +36,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("LoL Account Checker")]
-[assembly: AssemblyCopyright("original author: madk; updated by: krysty")]
+[assembly: AssemblyCopyright("original author: madk; updated by: PuppyLover101")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

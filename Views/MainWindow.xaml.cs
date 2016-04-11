@@ -170,17 +170,17 @@ namespace LoLAccountChecker.Views
 
         private void BtnUpdateClick(object sender, RoutedEventArgs e)
         {
-
+            Process.Start("https://github.com/CYCOABHI/LoL-Account-Checker-PuppyLover101");
         }
 
         private void BtnDonateClick(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=X9559SH2MKQ7S");
+            Process.Start("https://www.paypal.me/cycoabhi");
         }
 
         private void BtnGithubClick(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://github.com/yokrysty/LoLAccountChecker");
+            Process.Start("https://github.com/CYCOABHI/LoL-Account-Checker-PuppyLover101");
         }
 
         #endregion
@@ -390,6 +390,11 @@ namespace LoLAccountChecker.Views
             }
             FilterButton.Content = "Filter";
             IsFilterActive = false;
+        }
+
+        private void AccountsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

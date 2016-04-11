@@ -64,7 +64,7 @@
                   IsReadOnly="True" GridLinesVisibility="All"
                   BorderBrush="LightGray" BorderThickness="0,1"
                   MouseDoubleClick="Row_DoubleClick"
-                  ColumnHeaderStyle="{StaticResource ColHeaderCenterH}">
+                  ColumnHeaderStyle="{StaticResource ColHeaderCenterH}" SelectionChanged="AccountsDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Username}" Header="Username" />
                 <DataGridTextColumn Binding="{Binding Summoner}" Header="Summoner" />
