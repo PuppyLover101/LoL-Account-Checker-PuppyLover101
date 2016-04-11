@@ -1,17 +1,23 @@
 # LoL Account Checker-PuppyLover101's Version!
 
-[DOWNLOAD](https://github.com/yokrysty/LoLAccountChecker/raw/master/LoLAccountChecker.zip)
+[DOWNLOAD](https://github.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/blob/master/LoLAccountChecker.zip)
 
-![alt tag](https://raw.githubusercontent.com/yokrysty/LoLAccountChecker/master/preview_001.jpg)
+![alt tag](https://raw.githubusercontent.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/master/Sample%20Image-Dashboard.png)
 <br>
-![alt tag](https://raw.githubusercontent.com/yokrysty/LoLAccountChecker/master/preview_002.jpg)
+![alt tag](https://raw.githubusercontent.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/master/Sample%20Image-Accounts.png)
 <br>
-![alt tag](https://raw.githubusercontent.com/yokrysty/LoLAccountChecker/master/preview_003.jpg)
+![alt tag](https://raw.githubusercontent.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/master/Sample%20Image-Champions.jpg)
 <br>
-![alt tag](https://raw.githubusercontent.com/yokrysty/LoLAccountChecker/master/preview_004.jpg)
+![alt tag](https://raw.githubusercontent.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/master/Sample%20Image-Skins.png)
+<br>
+![alt tag](https://raw.githubusercontent.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/master/Sample%20Image-Runes.png)
+<br>
+![alt tag](https://raw.githubusercontent.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/master/Sample%20Image-Transfers.png)
+<br>
+![alt tag](https://raw.githubusercontent.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/master/Sample%20Image-Filter.png)
 <br>
 
-This tool will give you some information about your league of legends accounts and store them in a text file.
+This League Account Checker will give you information about your LoL accounts.
 
 ### How to use?
 
