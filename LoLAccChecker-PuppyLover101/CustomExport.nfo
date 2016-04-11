@@ -1,0 +1,89 @@
+# Custom Export Variables
+
+%index=start:digits%        - Account index, with 2 optional params:
+    start                   - Start index (example: 5)
+    digits                  - Number of digits (example: 2 => 02)
+
+    Examples: for 5 accounts:
+        %index%             => 1, 2, 3, 4, 5
+        %index=2%           => 2, 3, 4, 5, 6
+        %index=2:2%         => 02, 03, 04, 05, 06
+
+[Account]                   - Account information start tag
+    {AccountId}             - Account ID
+    {Username}              - Username
+    {Password}              - Password
+    {Summoner}              - Summoner name
+    {SummonerId}            - Summoner ID
+    {Level}                 - Summoner level
+    {PreviousSeasonRank}    - Previous season solo queue Rank
+    {SoloQRank}             - Current season solo queue Rank
+    {EmailStatus}           - Email status
+    {RpBalance}             - Riot Points
+    {IpBalance}             - Influence Points
+    {Champions}             - Number of champions owned
+    {Skins}                 - Number of skins owned
+    {RunePages}             - Number of rune pages owned
+    {Refunds}               - Number of refund tokens available
+    {Region}                - Region of the account
+    {LastPlay}              - Date and Time of the last match played
+    {CheckedTime}           - Date and Time of the check
+
+    [ChampionList]          - Champion list start tag
+        {Id}                - Champion ID
+        {Name}              - Champion name
+        {ImageUrl}          - Champion image Url
+        {Skins}             - Number of skins owned for this champion
+        {PurchaseDate}      - Date and Time when the champion was purchased
+    [/ChampionList]         - Champion list end tag
+
+    [SkinList]              - Skin list start tag
+        {Id}                - Skin ID
+        {ChampionId}        - Champion ID
+        {ChampionName}      - Champion name
+        {Name}              - Skin name
+        {ImageUrl}          - Skin image Url
+        {PurchaseDate}      - Date and Time when the skin was purchased
+        {Obtainable}        - Obtainable in shop
+    [/SkinList]             - Skin list end tag
+
+    [Runes]                 - Rune list start tag
+        {Name}              - Rune name
+        {Description}       - Rune description
+        {Tier}              - Rune tier
+        {Quantity}          - Rune quantity
+    [/Runes]                - Rune list end tag
+[/Account]                  - Account information end tag
+
+
+# Date and Time format
+- any format specifier can be used for any variable of type DateTime 
+
+Examples:
+{PurchaseDate:dd.MM.yyyy}   => 01.12.2014
+{PurchaseDate:MM\/dd\/yyyy} => 12/01/2014*
+
+*Note:
+- "/" separator must be escaped, with "\"
+
+# Date and Time format specifier
+d       - The day of the month, from 1 through 31
+dd      - The day of the month, from 01 through 31
+ddd     - The abbreviated name of the day of the week (Mon)
+dddd    - The full name of the day of the week (Monday)
+M       - The month, from 1 through 12
+MM      - The month, from 01 through 12
+MMM     - The abbreviated name of the month (Aug)
+MMMM    - The full name of the month (August)
+yy      - The year, from 00 to 99 (16)
+yyyy    - The year as a four-digit number (2016)
+h       - The hour, using a 12-hour clock from 1 to 12
+hh      - The hour, using a 12-hour clock from 01 to 12
+H       - The hour, using a 24-hour clock from 0 to 23
+HH      - The hour, using a 24-hour clock from 00 to 23
+m       - The minute, from 0 through 59
+mm      - The minute, from 00 through 59
+s       - The second, from 0 through 59
+ss      - The second, from 00 through 59
+
+'Made by PuppyLover101
