@@ -1,5 +1,13 @@
 # LoL Account Checker-PuppyLover101's Version!
 
+## What's the difference between this LoL Acc Checker and other ones?
+
+Well, this LoL Acc Checker is based of the original account checker (https://github.com/madk/LoLAccountChecker), but is modified to my suiting =) I've made it more detailed (check below), it has faster performance, and has no bugs! If you do find a bug, be sure to notify me and I'll fix it ASAP!
+
+*This account checker will also be updated by me every League Patch, and it will also get updates for new champions, skins, regions, runes, etc.*
+
+This program is Made by a person who has bad internet, and is made for people who have bad internet aswell. This account checker is very network and pc conserving; **However, it is ultra-fast aswell.**
+
 [DOWNLOAD](https://github.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/blob/master/LoLAccountChecker.zip)
 
 ![alt tag](https://raw.githubusercontent.com/CYCOABHI/LoL-Account-Checker-PuppyLover101/master/Sample%20Image-Dashboard.png)
