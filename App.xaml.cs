@@ -1,21 +1,21 @@
 ﻿#region License
 
-// Copyright 2015 LoLAccountChecker
+// Copyright 2015 LoLAccountChecker-PuppyLover101.
 // 
-// This file is part of LoLAccountChecker.
+// This file is part of LoLAccountChecker-PuppyLover101.
 // 
-// LoLAccountChecker is free software: you can redistribute it and/or modify 
+// LoLAccountChecker-PuppyLover101 is free software: you can redistribute it and/or modify 
 // it under the terms of the GNU General Public License as published 
 // by the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 // 
-// LoLAccountChecker is distributed in the hope that it will be useful, but 
+// LoLAccountChecker-PuppyLover101 is distributed in the hope that it will be useful, but 
 // WITHOUT ANY WARRANTY; without even the implied warranty of 
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
 // See the GNU General Public License for more details.
 // 
 // You should have received a copy of the GNU General Public License 
-// along with LoLAccountChecker. If not, see http://www.gnu.org/licenses/.
+// along with LoLAccountChecker-PuppyLover101. If not, see http://www.gnu.org/licenses/.
 
 #endregion
 
