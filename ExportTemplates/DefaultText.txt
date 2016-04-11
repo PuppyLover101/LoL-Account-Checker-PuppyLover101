@@ -1,0 +1,19 @@
+[Account]
+Account No:     %index%
+Username:       {Username}
+Password:       {Password}
+
+Summoner:       {Summoner}
+Region:         {Region}
+Level:          {Level}
+Last Rank:      {PreviousSeasonRank}
+This Rank:      {SoloQRank}
+Champions:      {Champions}
+Skins:          {Skins}
+Rune Pages:     {RunePages}
+RP:             {RpBalance}
+IP:             {IpBalance}
+Email:          {EmailStatus}
+
+----------------------------------------------------
+[/Account]

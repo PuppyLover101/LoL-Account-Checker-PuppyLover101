@@ -1,0 +1,15 @@
+<html>
+<head>
+<style type="text/css">table tr td {text-align:center}.cell-left{text-align:left}</style>
+</head>
+<body>
+<div align="center">
+<table border="1">
+   <tr><td>No</td><td>Username</td><td>Password</td><td>Summoner</td><td>Region</td><td>Level</td><td>RP</td><td>IP</td><td>Champs</td><td>Skins</td><td>Rune Pages</td><td>Last Rank</td><td>This Rank</td></tr>
+   [Account]
+   <tr><td>%index%</td><td class="cell-left">{Username}</td><td class="cell-left">{Password}</td><td class="cell-left">{Summoner}</td><td>{Region}</td><td>{Level}</td><td>{RpBalance}</td><td>{IpBalance}</td><td>{Champions}</td><td>{Skins}</td><td>{RunePages}</td><td>{PreviousSeasonRank}</td><td>{SoloQRank}</td></tr>
+   [/Account]
+</table>
+</div>
+</body>
+</html>

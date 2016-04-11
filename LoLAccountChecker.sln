@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoLAccountChecker", "LoLAccountChecker.csproj", "{066CDE87-0788-4547-8B24-ACDC95E445EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageLoader", "ImageLoader\ImageLoader.csproj", "{7C68C43B-0E5C-4B9F-9F49-045CAA39D8B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{066CDE87-0788-4547-8B24-ACDC95E445EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066CDE87-0788-4547-8B24-ACDC95E445EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066CDE87-0788-4547-8B24-ACDC95E445EB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{066CDE87-0788-4547-8B24-ACDC95E445EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066CDE87-0788-4547-8B24-ACDC95E445EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066CDE87-0788-4547-8B24-ACDC95E445EB}.Release|x86.ActiveCfg = Release|x86
+		{066CDE87-0788-4547-8B24-ACDC95E445EB}.Release|x86.Build.0 = Release|x86
+		{7C68C43B-0E5C-4B9F-9F49-045CAA39D8B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C68C43B-0E5C-4B9F-9F49-045CAA39D8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C68C43B-0E5C-4B9F-9F49-045CAA39D8B3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C68C43B-0E5C-4B9F-9F49-045CAA39D8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C68C43B-0E5C-4B9F-9F49-045CAA39D8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C68C43B-0E5C-4B9F-9F49-045CAA39D8B3}.Release|x86.ActiveCfg = Release|x86
+		{7C68C43B-0E5C-4B9F-9F49-045CAA39D8B3}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

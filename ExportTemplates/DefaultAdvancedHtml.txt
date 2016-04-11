@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>League of Legends Accounts</title>
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js"></script>
+    <style type="text/css">.datagrid table tfoot li a,.datagrid table thead th{filter:progid: DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F')}*{margin:0;padding:0;outline:0}body{font-family:'Helvetica Neue',arial,sans-serif;font-weight:200}.details-list{min-width:500px;width:500px;height:500px;margin:0 5px}.centered{text-align:center}.details-list ul{list-style:none;font-size:0;margin-left:-1.5%}.details-list ul li{display:inline-block;padding:5px;margin:0 0 1.5% 1.5%;width:18%;background:#fff;border:1px solid #ddd;font-size:1rem;vertical-align:top;box-shadow:0 0 5px #ddd;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}.details-list ul li img{max-width:100%;height:auto}.details-list ul li p{margin:0 0 5px;font-size:.75em;line-height:1em}.details-list table{width:100%}.image-large{max-width:250px;width:auto;display:none;position:absolute;z-index:999}.datagrid table{border-collapse:collapse}.datagrid{display:inline-block;width:auto;font:400 16px/160% Arial,Helvetica,sans-serif;background:#fff;overflow:hidden;border:1px solid #069;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.datagrid table td,.datagrid table th{padding:3px 10px}.datagrid table thead th{background:-webkit-gradient(linear,left top,left bottom,color-stop(.05,#069),color-stop(1,#00557F));background:-moz-linear-gradient(center top,#069 5%,#00557F 100%);background-color:#069;color:#FFF;font-size:15px;font-weight:700;border-left:1px solid #0070A8}.datagrid table thead th:first-child{border:none}.datagrid table tbody td{color:#00557F;border-left:1px solid #E1EEF4;font-size:12px;font-weight:400}.datagrid table tbody .alt td{background:#E1EEf4;color:#00557F}.datagrid table tbody td:first-child{border-left:none}.datagrid table tbody tr:last-child td{border-bottom:none}.datagrid table tfoot td{padding:0;font-size:12px}.datagrid table tfoot td div{border-top:1px solid #069;background:#E1EEf4;padding:2px}.datagrid table tfoot td ul{margin:0;padding:0;list-style:none;text-align:right}.datagrid table tfoot li{display:inline}.datagrid table tfoot li a{text-decoration:none;display:inline-block;padding:2px 8px;margin:1px;color:#FFF;border:1px solid #069;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background:-webkit-gradient(linear,left top,left bottom,color-stop(.05,#069),color-stop(1,#00557F));background:-moz-linear-gradient(center top,#069 5%,#00557F 100%);background-color:#069}.datagrid table tfoot ul a:hover,.datagrid table tfoot ul.active{text-decoration:none;border-color:#00557F;color:#FFF;background:#069}</style>
+</head>
+<body>
+<script type="text/javascript">function getX(e){return e.pageX?e.pageX-(document.body.scrollLeft||document.documentElement.scrollLeft):e.clientX}function getY(e){return e.pageY?e.pageY-(document.body.scrollTop||document.documentElement.scrollTop):e.clientY}$(document).ready(function(){$(".showDetailsModal").qtip({content:{text:"Click for details"}}),$(".image-box").hover(function(){$(".image-large").attr("src",$(this).attr("src")),$(".image-large").show()},function(){$(".image-large").hide()}),$(".image-box").mousemove(function(e){$(".image-large").css("top",getY(e)),$(".image-large").css("left",getX(e))});var e=$(".details-list");e.dialog({autoOpen:!1,modal:!0,width:e.width()+40,maxWidth:e.width()+40,height:500,maxHeight:500,closeOnEscape:!0,position:{my:"center top",at:"center top",of:window}}),$(".showDetailsModal").on("click",function(e){e.preventDefault();var t,o,i=$(this).parent().parent().index();$(this).hasClass("showChamps")?(t=".champs-list",o="Champions"):$(this).hasClass("showSkins")?(t=".skins-list",o="Skins"):$(this).hasClass("showRunes")&&(t=".runes-list",o="Runes");var s=$(t).eq(i);return s.dialog("option","title",o),s.dialog("open"),!1})});</script>
+    <img class="image-large" style="display: none; position: absolute; z-index: 999;">
+    <div align="center">
+    <h4 style="margin:20px;">League of Legends Accounts</h4>
+    <p style="margin-bottom:20px;">Tip: click on champs, skins, rune pages numbers for more details.</p>
+    <div class="datagrid">
+    <table border="1">
+       <thead>
+       <tr class="centered">
+          <th>Account</th>
+          <th>Region</th>
+          <th>Level</th>
+          <th>RP</th>
+          <th>IP</th>
+          <th>Champs</th>
+          <th>Skins</th>
+          <th>Rune Pages</th>
+          <th>Last Rank</th>
+          <th>This Rank</th>
+          <th style="display:none;">ChampList</th>
+          <th style="display:none;">SkinsList</th>
+          <th style="display:none;">RuneList</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr>
+[Account]
+          <td class="centered">%index%</td>
+          <td class="centered">{Region}</td>
+          <td class="centered">{Level}</td>
+          <td class="centered">{RpBalance}</td>
+          <td class="centered">{IpBalance}</td>
+          <td class="centered"><a class="showDetailsModal showChamps" href="#">{Champions}</a></td>
+          <td class="centered"><a class="showDetailsModal showSkins" href="#">{Skins}</a></td>
+          <td class="centered"><a class="showDetailsModal showRunes" href="#">{RunePages}</a></td>
+          <td>{PreviousSeasonRank}</td>
+          <td>{SoloQRank}</td>
+          <td style="display:none;">
+            <div class="champs-list details-list">
+            <ul>
+[ChampionList]
+            <li>
+                <img src="{ImageUrl}">
+                <p>{Name}</p>
+                <p>Skins: {Skins}</p>
+            </li>
+[/ChampionList]
+            </ul>
+            </div>
+          </td>
+          <td style="display:none;">
+            <div class="skins-list details-list">
+            <ul>
+[SkinList]
+              <li>
+                <img class="image-box" src="{ImageUrl}">
+                <p>{Name}</p>
+              </li>
+[/SkinList]
+            </ul>
+            </div>
+          </td>
+          <td style="display:none;">
+            <div class="runes-list details-list">
+                <table border="1">
+                    <tr>
+                        <td class="centered">Description</td>
+                        <td class="centered">Tier</td>
+                        <td class="centered">Quantity</td>
+                    </tr>
+[Runes]
+                    <tr>
+                        <td>{Description}</td>
+                        <td class="centered">{Tier}</td>
+                        <td class="centered">{Quantity}</td>
+                    </tr>           
+[/Runes]          
+                </table>
+            </div>
+          </td>
+       </tr>
+[/Account]
+    </tbody>
+    </table>
+    </div>
+    </div>
+</body>
+</html>
