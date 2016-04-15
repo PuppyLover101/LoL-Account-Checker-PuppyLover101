@@ -1,7 +1,7 @@
 {
   "ShowPasswords": true,
-  "SelectedRegion": 2,
-  "ClientVersion": "6.7.16_04_05_15_51",
-  "DataDragonVersion": "6.7.1",
-  "DefaultCustomExportFilename": "DefaultText.txt"
+  "SelectedRegion": 0,
+  "ClientVersion": "6.7.16_04_13_12_18",
+  "DataDragonVersion": null,
+  "DefaultCustomExportFilename": null
 }
