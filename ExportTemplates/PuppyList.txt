@@ -1,0 +1,45 @@
+[Account]
+Account No:     %index%
+
+Region:         {Region}
+Level:          {Level}
+Last Rank:      {PreviousSeasonRank}
+Current Rank:   {SoloQRank}
+Champions:      {Champions}
+Skins:          {Skins}
+Rune Pages:     {RunePages}
+RP:             {RpBalance}
+IP:             {IpBalance}
+Email:          {EmailStatus}
+Last Play:      {LastPlay}
+
+Champions:
+
+[ChampionList]
+
+{Name}
+
+[/ChampionList]
+
+Skins:
+
+[SkinList]
+
+{ChampionName}
+{Name}
+
+[/SkinList]
+
+Runes:
+
+[Runes]
+
+{Name}
+{Description}
+{Tier} 
+{Quantity}
+
+[/Runes]
+
+----------------------------------------------------
+[/Account]
