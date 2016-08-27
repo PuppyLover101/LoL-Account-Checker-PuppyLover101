@@ -2,7 +2,7 @@
 
 ## What's the difference between this LoL Acc Checker and other ones?
 
-Well, this LoL Acc Checker is based from the [original account checker (madk)](https://github.com/madk/LoLAccountChecker), but is modified (In a good way Kappa) I've made it more detailed (check below), it has faster performance, and has no bugs! If you do find a bug, be sure to notify me and I'll fix it ASAP!
+This checker is  more detailed (check below), it has faster performance, and has no bugs! If you do find a bug, be sure to notify me and I'll fix it ASAP!
 
 *This account checker will also be updated by me every League Patch, and it will also get updates for new champions, skins, regions, runes, etc.*
 
