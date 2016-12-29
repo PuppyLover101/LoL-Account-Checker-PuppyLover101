@@ -60,7 +60,7 @@ namespace LoLAccountChecker.Classes
 
             if (!b.Any())
             {
-                await MainWindow.Instance.ShowMessageAsync("Error", "Missing data files.");
+                await MainWindow.Instance.ShowMessageAsync("Error", "Missing data files. Under League folder");
                 MainWindow.Instance.Close();
                 return;
             }

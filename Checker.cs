@@ -30,7 +30,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using LoLAccountChecker.Classes;
 using LoLAccountChecker.Views;
-using PVPNetClient;
+using BananaLib;
 using RtmpSharp.IO;
 
 #endregion
@@ -43,8 +43,6 @@ namespace LoLAccountChecker
     {
         public static ObservableCollection<Account> Accounts = new ObservableCollection<Account>();
         static readonly ConcurrentQueue<KeyValuePair<int, Account>> Queue = new ConcurrentQueue<KeyValuePair<int, Account>>();        
-        private static readonly SerializationContext Context = PvpClient.GetContext();
-        private static readonly string LoLIp = PvpClient.GetLoLIpAddress();
         public static bool IsChecking { get; private set; }
         public static CancellationTokenSource CancellationTokenSource { get; private set; }
 
@@ -116,7 +114,7 @@ namespace LoLAccountChecker
                 {
                     Account account = item.Value;
 
-                    Client client = new Client(account.Region, account.Username, account.Password, LoLIp, Context);
+                    Client client = new Client(account.Region, account.Username, account.Password);
                     client.IsCompleted.Task.Wait();
                     client.Disconnect();
 

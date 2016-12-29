@@ -28,10 +28,13 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using LoLAccountChecker.Classes;
-using PVPNetClient;
-using PVPNetClient.RiotObjects.Platform;
+using LoLAccountChecker.Views;
+using BananaLib;
+using BananaLib.RiotObjects.Platform;
+using BananaLib.RiotObjects.Leagues;
 using RtmpSharp.IO;
 using RtmpSharp.Net;
+using RtmpSharp.Messaging;
 
 #endregion
 
@@ -39,12 +42,12 @@ namespace LoLAccountChecker
 {
     public class Client
     {
-        private readonly PvpClient _pvpnet;
+        private readonly LoLClient _lolClient;
         public Account Data;
 
         public TaskCompletionSource<bool> IsCompleted;
 
-        public Client(Region region, string username, string password, string ip, SerializationContext context)
+        public Client(Region region, string username, string password)
         {
             Data = new Account
             {
@@ -56,23 +59,41 @@ namespace LoLAccountChecker
 
             IsCompleted = new TaskCompletionSource<bool>();
 
-            _pvpnet = new PvpClient(username, password, region, Settings.Config.ClientVersion)
-            {
-                SerializationContext = context,
-                LoLIpAddress = ip
-            };
-            _pvpnet.OnError += OnError;
+            _lolClient = new LoLClient(username, password, region, Settings.Config.ClientVersion);
+            
+            _lolClient.OnError += OnError;
+
+            _lolClient.OnMessageReceived += new EventHandler<MessageReceivedEventArgs>(this.OnMessageReceived);
 
             GetData();
         }
 
+        /*
+         * Handle when riot sends us something
+         * Atm this function just looks for 'getMyLeaguePositions' method to find out summoner's current rank
+         */
+        private void OnMessageReceived(object sender, MessageReceivedEventArgs messageReceivedEventArgs)
+        {
+            // Get summoner's current season rank
+            object body = messageReceivedEventArgs.Message.Body;
+            if (!(body.GetType() == typeof(LcdsServiceProxyResponse)))
+                return;
+            LcdsServiceProxyResponse serviceProxyResponse = (LcdsServiceProxyResponse) body;
+            string methodName = serviceProxyResponse.MethodName;
+            if (methodName == "getMyLeaguePositions")
+            {
+                LeagueItemDTO leagueItemDto = serviceProxyResponse.GetDeserializedPayload<SummonerLeagueItemsDTO>().SummonerLeagues.FirstOrDefault<LeagueItemDTO>((Func<LeagueItemDTO, bool>)(l => l.QueueType == "RANKED_SOLO_5x5"));
+                Data.SoloQRank = leagueItemDto != null ? string.Format("{0}{1} {2}", (object)char.ToUpper(leagueItemDto.Tier[0]), (object)leagueItemDto.Tier.Substring(1).ToLower(), (object)leagueItemDto.Rank) : "Unranked";
+            }
+        }
+
         public void Disconnect()
         {
-            if (_pvpnet.IsConnected)
+            if (_lolClient.IsConnected)
             {
                 try
                 {
-                    _pvpnet.Disconnect();
+                    _lolClient.Disconnect();
                 }
                 catch
                 {
@@ -81,7 +102,7 @@ namespace LoLAccountChecker
             }
         }
 
-        private void OnError(object sender, Error error)
+        private void OnError(Error error)
         {
             Data.ErrorMessage = error.Message;
             Data.State = Account.Result.Error;
@@ -90,18 +111,18 @@ namespace LoLAccountChecker
 
         private async void GetData()
         {
-            if (!await _pvpnet.ConnectAndLogin())
+            if (!await _lolClient.ConnectAndLogin().ConfigureAwait(false))
             {
                 return;
             }
 
             try
             {
-                var loginDataPacket = await _pvpnet.GetLoginDataPacketForUser();
+                var loginDataPacket = await _lolClient.GetLoginDataPacketForUser().ConfigureAwait(false);
 
                 if (loginDataPacket.AllSummonerData == null)
                 {
-                    OnError(this, new Error
+                    OnError(new Error
                     {
                         Message = "Summoner Not Created",
                         Type = ErrorType.Login
@@ -112,12 +133,12 @@ namespace LoLAccountChecker
                 List<Task> tasks = new List<Task>
                 {
                     GetLoginData(loginDataPacket),
-                    _pvpnet.GetStoreUrl().ContinueWith(url => GetStoreData(url.Result)),
+                    _lolClient.GetStoreUrl().ContinueWith(url => GetStoreData(url.Result)),
                     GetChampions(),
                     GetRunes(loginDataPacket.AllSummonerData.Summoner.SummonerId)
                 };
 
-                await Task.WhenAll(tasks.ToArray());
+                await Task.WhenAll(tasks.ToArray()).ConfigureAwait(false);
 
                 Data.CheckedTime = DateTime.Now;
                 Data.State = Account.Result.Success;
@@ -162,19 +183,6 @@ namespace LoLAccountChecker
             Data.PreviousSeasonRank = !string.IsNullOrEmpty(prevSeasonRank) 
                 ? prevSeasonRank[0] + prevSeasonRank.Substring(1).ToLower()
                 : "Unranked";
-
-            if (Data.Level == 30)
-            {
-                var myLeagues = await _pvpnet.GetMyLeaguePositions();
-                var soloqLeague = myLeagues.SummonerLeagues.FirstOrDefault(l => l.QueueType == "RANKED_SOLO_5x5");
-                Data.SoloQRank = soloqLeague != null
-                    ? $"{char.ToUpper(soloqLeague.Tier[0])}{soloqLeague.Tier.Substring(1).ToLower()} {soloqLeague.Rank}"
-                    : "Unranked";
-            }
-            else
-            {
-                Data.SoloQRank = "Unranked";
-            }
         }
 
         private async Task GetStoreData(string storeUrl)
@@ -219,7 +227,7 @@ namespace LoLAccountChecker
 
         private async Task GetChampions()
         {
-            var champions = await _pvpnet.GetAvailableChampions();
+            var champions = await _lolClient.GetAvailableChampions();
 
             Data.ChampionList = new List<ChampionData>();
             Data.SkinList = new List<SkinData>();
@@ -258,13 +266,14 @@ namespace LoLAccountChecker
                         PurchaseDate = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(skin.PurchaseDate / 1000d))
                     });
                 }
+            }
 
-                foreach (ChampionData champ in Data.ChampionList)
-                {
-                    List<SkinData> skins = Data.SkinList.Where(c => c.ChampionId == champ.Id).ToList();
-                    champ.HasSkin = skins.Count > 0;
-                    champ.Skins = skins.Count;
-                }
+            // find out number of skins for each champ
+            foreach (ChampionData champ in Data.ChampionList)
+            {
+                List<SkinData> skins = Data.SkinList.Where(c => c.ChampionId == champ.Id).ToList();
+                champ.HasSkin = skins.Count > 0;
+                champ.Skins = skins.Count;
             }
         }
 
@@ -272,7 +281,7 @@ namespace LoLAccountChecker
         {
             Data.Runes = new List<RuneData>();
 
-            var runes = await _pvpnet.GetSummonerRuneInventory(summmonerId);
+            var runes = await _lolClient.GetSummonerRuneInventory(summmonerId);
 
             if(runes == null)
             {
@@ -299,3 +308,4 @@ namespace LoLAccountChecker
         }
     }
 }
+ 

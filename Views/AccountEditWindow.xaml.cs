@@ -24,7 +24,7 @@
 using System.Linq;
 using System.Windows;
 using LoLAccountChecker.Classes;
-using PVPNetClient;
+using BananaLib;
 using System.Collections.Generic;
 
 #endregion
@@ -39,7 +39,7 @@ namespace LoLAccountChecker.Views
         {
             InitializeComponent();
 
-            RegionBox.ItemsSource = PvpClient.GetAllAvailableRegions();
+            RegionBox.ItemsSource = LoLClient.GetAllAvailableRegions();
             RegionBox.SelectedItem = Settings.Config.SelectedRegion;
 
             _accounts = accounts;
