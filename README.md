@@ -1,5 +1,7 @@
 # LoL Account Checker-PuppyLover101's Version!
 
+Its me from discord @Fluffy @Satan.
+
 ## What's the difference between this LoL Acc Checker and other ones?
 
 This checker is  more detailed (check below), it has faster performance, and has no bugs! If you do find a bug, be sure to notify me and I'll fix it ASAP!
