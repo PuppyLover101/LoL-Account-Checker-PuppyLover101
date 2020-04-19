@@ -1,5 +1,8 @@
 # LoL Account Checker-PuppyLover101's Version!
 
+This application is no longer being updated. Please fork and update it yourself/use another program.
+Riot API has changed, meaning you can't just update the the checker locally by changing the patch version.
+
 ## What's the difference between this LoL Acc Checker and other ones?
 
 This checker is  more detailed (check below), it has faster performance, and has no bugs! If you do find a bug, be sure to notify me and I'll fix it ASAP!
