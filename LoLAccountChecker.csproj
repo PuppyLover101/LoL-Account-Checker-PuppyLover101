@@ -89,18 +89,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PVPNetClient">
-      <HintPath>lib\PVPNetClient.dll</HintPath>
-    </Reference>
-    <Reference Include="rtmp-sharp">
-      <HintPath>lib\rtmp-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="StringLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\StringLib.dll</HintPath>
     </Reference>
+	  <Reference Include="rtmp-sharp">
+      <HintPath>lib\rtmp-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+	<Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\MahApps.Metro.1.2.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -129,6 +128,10 @@
     <Compile Include="Classes\BaseViewModel.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Utils.cs" />
+	<Compile Include="Tools.cs" />
+    <compile Include="PVPNetClient\**\*.cs" />
+	<compile Include="BananaLib\**\*.cs" />
+	<compile Include="rtmp-sharp\**\*.cs" />
     <Compile Include="Views\AccountsWindow.xaml.cs">
       <DependentUpon>AccountsWindow.xaml</DependentUpon>
     </Compile>

@@ -1,4 +1,0 @@
-System.FormatException: One of the identified items was in an invalid format.
-   at StringLib.HenriFormatter.OutExpression(Object source, String expression)
-   at StringLib.HenriFormatter.HenriFormat(String format, Object source)
-   at LoLAccountChecker.Views.ExportWindow.<ButtonClick>d__4.MoveNext() in C:\Users\Abhirup\Desktop\Coding\LoL-Account-Checker-PuppyLover101\Views\ExportWindow.xaml.cs:line 164
